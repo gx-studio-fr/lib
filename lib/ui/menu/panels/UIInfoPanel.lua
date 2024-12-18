@@ -29,15 +29,15 @@ function UIPanels:info(Title, LeftText, RightText, Index, startAt)
 
         if (not Index and not startAt) or ((not Index and startAt) and CurrentMenu.Index >= startAt) or ((not startAt and Index) and CurrentMenu.Index == Index) then
             if Title ~= nil then
-                _RenderText("~h~" .. Title .. "~h~", 330 + 20 + 100, 7, 0, 0.34, 255, 255, 255, 255, 0)
+                _RenderText("~h~" .. Title .. "~h~", 330 + 20 + 100 + CurrentMenu.X, 7 + CurrentMenu.Y, 0, 0.34, 255, 255, 255, 255, 0)
             end
             if LeftText ~= nil then
-                _RenderText(table.concat(LeftText, "\n"), 330 + 20 + 100, Title ~= nil and 37 or 7, 0, 0.25, 255, 255, 255, 255, 0)
+                _RenderText(table.concat(LeftText, "\n"), 330 + 20 + 100 + CurrentMenu.X, Title ~= nil and 37 or 7 + CurrentMenu.Y, 0, 0.25, 255, 255, 255, 255, 0)
             end
             if RightText ~= nil then
-                _RenderText(table.concat(RightText, "\n"), 330 + 342 + 80, Title ~= nil and 37 or 7, 0, 0.25, 255, 255, 255, 255, 2)
+                _RenderText(table.concat(RightText, "\n"), 330 + 342 + 80 + CurrentMenu.X, Title ~= nil and 37 or 7 + CurrentMenu.Y, 0, 0.25, 255, 255, 255, 255, 2)
             end
-            _RenderRectangle(320 + 10 + 100, 0, 342, Title ~= nil and 50 + (LineCount * 20), 0, 0, 0, 160)
+            _RenderRectangle(320 + 10 + 100 + CurrentMenu.X, CurrentMenu.Y, 342, Title ~= nil and 50 + (LineCount * 20), 0, 0, 0, 160)
         end
 
     end
