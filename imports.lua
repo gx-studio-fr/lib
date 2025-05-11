@@ -116,4 +116,8 @@ lib.classes.list = require 'system.modules.classes.List';
 lib.classes.map = require 'system.modules.classes.Map';
 lib.classes.color = require 'system.modules.classes.Color';
 
+lib.classes.vector2 = require 'system.modules.classes.vectors.Vector2';
+lib.classes.vector3 = require 'system.modules.classes.vectors.Vector3';
+lib.classes.vector4 = require 'system.modules.classes.vectors.Vector4';
+
 require 'lib.index';
